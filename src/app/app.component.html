@@ -2,7 +2,13 @@
   <div class="card" style="background-color: aquamarine">
     <div class="card-body">
       <h3 class="card-title">Parent Component (AppComponent)</h3>
-      <input type="text" [(ngModel)]="pText" size="60rem" />
+      <input
+        type="text"
+        #parentMessage
+        [(ngModel)]="pText"
+        size="60rem"
+        (keyup)="onKey(parentMessage)"
+      />
 
       <p>
         This is the message from the Child: <em>{{ poText | uppercase }}</em>

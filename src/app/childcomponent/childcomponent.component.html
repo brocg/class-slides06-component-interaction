@@ -6,7 +6,7 @@
         This is the message from the Parent: <em> {{ inputText }}</em>
       </p>
       <div>
-        <input type="text" [(ngModel)]="message" size="40rem" />
+        <input type="text" #childMessage size="40rem" />
       </div>
       <div>
         <button class="btn btn-primary" (click)="sendMessage()">

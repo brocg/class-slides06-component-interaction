@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-childcomponent',
@@ -10,6 +18,8 @@ export class ChildcomponentComponent implements OnInit {
 
   @Output() outputEvent = new EventEmitter<string>();
 
+  @ViewChild('childMessage') msgChild: ElementRef;
+
   message: string = '';
 
   constructor() {}
@@ -17,6 +27,6 @@ export class ChildcomponentComponent implements OnInit {
   ngOnInit() {}
 
   sendMessage() {
-    this.outputEvent.emit(this.message);
+    this.outputEvent.emit(this.msgChild.nativeElement.value);
   }
 }

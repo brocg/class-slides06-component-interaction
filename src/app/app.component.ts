@@ -12,4 +12,8 @@ export class AppComponent {
   receiveMessage(msg: string) {
     this.poText = msg;
   }
+
+  onKey(msg: HTMLInputElement) {
+    this.pText = msg.value;
+  }
 }
